@@ -20,14 +20,15 @@ function App() {
     <Header info="Movie Review"/>  
       <main className='py-3'>
         <Container>
-          <Routes>
+          <Routes> {/* Encloses all the pages that we can route to*/}
             <Route path='/' element={<HomePage/>} />
             <Route path='/movie/:id' element={<MoviePage/>} />
             <Route path='/add' element={<FormPage/>} exact/>
           </Routes>
         </Container>
       </main>
-    <Footer trademark="Copyright by jeremaiiiahmata"/>   
+    <Footer trademark="Copyright &copy; jeremaiiiahmata"/>   
+
     </Router>
   )
 }
