@@ -15,7 +15,7 @@ const [responseMessage, setResponseMessage] = useState("");
     }
     
     const handleSubmit = async (e) => {
-      e.preventDefault();
+      // e.preventDefault(); //prevents a browser reload/refresh.
 
       const data = {
         title : title,

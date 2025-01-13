@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 
 const MovieItem = ({ movie }) => {
   return (
-    <Card className='my-3 py-3 px-3 rounded'>
-        <Link to={`products/${movie.id}`}>
+    <Card className='my-3 py-3 px-3 rounded' >
+        <Link to={`movie/${movie.id}`}>
             <Card.Img src="../images/placeholder.png"/>
         </Link>
 
         <Card.Body>
-            <Link to={`products/${movie.id}`}>
+            <Link to={`movie/${movie.id}`}>
                 <Card.Title as="div">
                     <strong>{movie.title}</strong>
                 </Card.Title>

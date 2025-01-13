@@ -1,10 +1,11 @@
 import {React, useEffect, useState} from 'react'
 import { Row, Col } from 'react-bootstrap';
 import MovieItem from './MovieItem';
+import axios from 'axios';
 
 const Movies = () => {
     
-    const [data, setData] = useState(null);
+    const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     
@@ -13,9 +14,9 @@ const Movies = () => {
     const fetchData = async () => {
         try{
             setLoading(true);
-            const response = await fetch("http://127.0.0.1:8000/api/movies/");
-            const result = await response.json()
-            setData(result);
+            const { data } = await axios.get('/api/movies/');
+            console.log('API Response:', data);
+            setMovies(data);
 
         } catch (error) {
             console.log(error);
@@ -36,7 +37,7 @@ const Movies = () => {
     <>
         <div>
             <Row>
-                {data.map((movie) => (
+                {movies.map((movie) => (
                     <Col key={movie.id} sm={12} md={6} lg={4} xl={3}>
                         <MovieItem movie={movie}/>
                     </Col>
